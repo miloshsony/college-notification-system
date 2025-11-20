@@ -12,13 +12,16 @@
         android:padding="24dp"
         android:gravity="center">
 
+        <!-- App Logo -->
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@mipmap/ic_launcher"
             android:layout_marginTop="40dp"
-            android:layout_marginBottom="24dp" />
+            android:layout_marginBottom="24dp"
+            android:contentDescription="App Logo" />
 
+        <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,8 +37,52 @@
             android:text="Register to get started"
             android:textSize="16sp"
             android:textColor="#666666"
-            android:layout_marginBottom="32dp" />
+            android:layout_marginBottom="24dp" />
 
+        <!-- User Type Selection -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select User Type"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/user_type_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radio_student"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:padding="12dp"
+                android:text="Student"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radio_teaching_staff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:text="Teaching Staff"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radio_non_teaching_staff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:text="Non-Teaching Staff"
+                android:textSize="16sp" />
+        </RadioGroup>
+
+        <!-- Email Input -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -49,6 +96,7 @@
                 android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Password Input -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -62,6 +110,7 @@
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Confirm Password Input -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -75,6 +124,7 @@
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Progress Bar -->
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
@@ -82,6 +132,7 @@
             android:visibility="gone"
             android:layout_marginBottom="16dp" />
 
+        <!-- Register Button -->
         <Button
             android:id="@+id/registerButton"
             android:layout_width="match_parent"
@@ -91,6 +142,7 @@
             android:textStyle="bold"
             android:layout_marginBottom="16dp" />
 
+        <!-- Login Link -->
         <TextView
             android:id="@+id/loginLink"
             android:layout_width="wrap_content"

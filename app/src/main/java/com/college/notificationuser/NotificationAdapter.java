@@ -4,49 +4,46 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 import java.util.List;
-import java.util.Locale;
 
-public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapter.ViewHolder> {
+public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapter.NotificationViewHolder> {
 
-    private List<Notification> notifications;
+    private List<NotificationModel> notificationList;
 
-    public NotificationAdapter(List<Notification> notifications) {
-        this.notifications = notifications;
+    public NotificationAdapter(List<NotificationModel> notificationList) {
+        this.notificationList = notificationList;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public NotificationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_notification, parent, false);
-        return new ViewHolder(view);
+        return new NotificationViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Notification notification = notifications.get(position);
-        holder.titleText.setText(notification.getTitle());
-        holder.bodyText.setText(notification.getBody());
+    public void onBindViewHolder(@NonNull NotificationViewHolder holder, int position) {
+        NotificationModel notification = notificationList.get(position);
 
-        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy hh:mm a", Locale.getDefault());
-        String dateTime = sdf.format(new Date(notification.getTimestamp()));
-        holder.timeText.setText(dateTime);
+        holder.titleText.setText(notification.getTitle());
+        holder.bodyText.setText(notification.getMessage());  // ✅ Changed from getBody() to getMessage()
+        holder.timeText.setText(notification.getTimestamp());
     }
 
     @Override
     public int getItemCount() {
-        return notifications.size();
+        return notificationList != null ? notificationList.size() : 0;
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    static class NotificationViewHolder extends RecyclerView.ViewHolder {
         TextView titleText, bodyText, timeText;
 
-        public ViewHolder(@NonNull View itemView) {
+        public NotificationViewHolder(@NonNull View itemView) {
             super(itemView);
             titleText = itemView.findViewById(R.id.titleText);
             bodyText = itemView.findViewById(R.id.bodyText);

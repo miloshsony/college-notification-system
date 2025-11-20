@@ -2,93 +2,125 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f5f5f5"
+    android:background="@android:color/white"
     android:fillViewport="true">
 
     <LinearLayout
+        android:id="@+id/parent_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical"
-        android:padding="24dp"
-        android:gravity="center">
+        android:padding="24dp">
 
+        <!-- App Logo/Icon (Optional) -->
         <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="60dp"
             android:src="@mipmap/ic_launcher"
-            android:layout_marginTop="40dp"
-            android:layout_marginBottom="24dp" />
+            android:contentDescription="App Logo" />
 
+        <!-- App Title -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="College Notifications"
+            android:layout_marginTop="20dp"
+            android:text="College Notification"
+            android:textColor="#1976D2"
             android:textSize="28sp"
-            android:textStyle="bold"
-            android:textColor="#6200EE"
-            android:layout_marginBottom="8dp" />
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login to your account"
-            android:textSize="16sp"
+            android:layout_marginTop="8dp"
+            android:text="Welcome Back"
             android:textColor="#666666"
-            android:layout_marginBottom="32dp" />
+            android:textSize="16sp" />
 
+        <!-- Email Input -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
-            android:layout_marginBottom="16dp">
+            android:layout_marginTop="40dp"
+            android:hint="Email Address">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/emailInput"
+                android:id="@+id/email_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:textColor="#000000"
+                android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Password Input -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
-            android:layout_marginBottom="24dp">
+            android:layout_marginTop="16dp"
+            android:hint="Password">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/passwordInput"
+                android:id="@+id/password_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textColor="#000000"
+                android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
+        <!-- Forgot Password (Optional) -->
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginTop="8dp"
+            android:gravity="end"
+            android:text="Forgot Password?"
+            android:textColor="#1976D2"
+            android:textSize="14sp" />
 
+        <!-- Sign In Button -->
         <Button
-            android:id="@+id/loginButton"
+            android:id="@+id/btn_sign_in"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:text="Login"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#1976D2"
+            android:text="SIGN IN"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
+        <!-- Divider Text -->
         <TextView
-            android:id="@+id/registerLink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Don't have an account?"
+            android:textColor="#666666"
+            android:textSize="14sp" />
+
+        <!-- Register Link Button -->
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#757575"
+            android:text="CREATE NEW ACCOUNT"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <!-- Progress Bar -->
+        <ProgressBar
+            android:id="@+id/progress_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Don't have an account? Register"
-            android:textSize="14sp"
-            android:textColor="#6200EE"
-            android:textStyle="bold"
-            android:clickable="true"
-            android:focusable="true" />
+            android:layout_marginTop="20dp"
+            android:visibility="gone" />
 
     </LinearLayout>
-
 </ScrollView>

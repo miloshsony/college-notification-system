@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Admin Panel"
+            android:text="Create Notification"
             android:textSize="28sp"
             android:textStyle="bold"
             android:padding="16dp"
@@ -35,14 +35,14 @@
             android:layout_marginBottom="12dp" />
 
         <RadioGroup
-            android:id="@+id/targetAudienceGroup"
+            android:id="@+id/target_audience_radio_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:orientation="vertical">
 
             <RadioButton
-                android:id="@+id/radioAllUsers"
+                android:id="@+id/radio_all_users"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="All Users (Everyone)"
@@ -51,7 +51,7 @@
                 android:textSize="16sp" />
 
             <RadioButton
-                android:id="@+id/radioStudents"
+                android:id="@+id/radio_students_only"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Students Only"
@@ -59,7 +59,7 @@
                 android:textSize="16sp" />
 
             <RadioButton
-                android:id="@+id/radioTeachingStaff"
+                android:id="@+id/radio_teaching_staff_only"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Teaching Staff Only"
@@ -67,7 +67,7 @@
                 android:textSize="16sp" />
 
             <RadioButton
-                android:id="@+id/radioNonTeachingStaff"
+                android:id="@+id/radio_non_teaching_staff_only"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Non-Teaching Staff Only"
@@ -83,7 +83,7 @@
             android:layout_marginBottom="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/titleInput"
+                android:id="@+id/notification_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
@@ -97,7 +97,7 @@
             android:layout_marginBottom="24dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/messageInput"
+                android:id="@+id/notification_message"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
@@ -108,13 +108,14 @@
 
         <!-- Send Button -->
         <Button
-            android:id="@+id/sendButton"
+            android:id="@+id/btn_send_notification"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:text="Send Notification"
+            android:text="SEND NOTIFICATION"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:backgroundTint="#4CAF50" />
+            android:backgroundTint="#4CAF50"
+            android:textColor="@android:color/white" />
 
     </LinearLayout>
 </ScrollView>
