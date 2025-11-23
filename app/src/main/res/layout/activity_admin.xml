@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:padding="24dp"
     android:gravity="center"
-    android:background="@android:color/white">
+    android:background="@drawable/sai">
 
     <!-- Header -->
     <TextView

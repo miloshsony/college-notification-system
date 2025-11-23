@@ -18,7 +18,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginTop="60dp"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/logo"
             android:contentDescription="App Logo" />
 
         <!-- App Title -->
@@ -72,14 +72,6 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Forgot Password (Optional) -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:gravity="end"
-            android:text="Forgot Password?"
-            android:textColor="#1976D2"
-            android:textSize="14sp" />
 
         <!-- Sign In Button -->
         <Button

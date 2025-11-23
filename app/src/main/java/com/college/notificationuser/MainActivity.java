@@ -149,8 +149,19 @@ public class MainActivity extends AppCompatActivity {
 
                             Log.d(TAG, "Notification: " + title + " - Target: " + targetAudience);
 
-                            // Filter notifications based on user type
-                            if (targetAudience != null && (targetAudience.equals("ALL") || targetAudience.equals(currentUserType))) {
+                            // 💡 CHANGE: If admin, show all notifications. If not, apply filtering.
+                            if ("ADMIN".equals(currentUserType)) {
+                                // ADMIN: add every notification
+                                NotificationModel notification = new NotificationModel(
+                                        title != null ? title : "No Title",
+                                        message != null ? message : "No Message",
+                                        timestamp != null ? timestamp : "Unknown",
+                                        targetAudience,
+                                        sender != null ? sender : "Admin"
+                                );
+                                notificationList.add(notification);
+                            } else if (targetAudience != null && (targetAudience.equals("ALL") || targetAudience.equals(currentUserType))) {
+                                // Non-admin: only relevant notifications
                                 NotificationModel notification = new NotificationModel(
                                         title != null ? title : "No Title",
                                         message != null ? message : "No Message",
@@ -180,6 +191,7 @@ public class MainActivity extends AppCompatActivity {
                         adapter.notifyDataSetChanged();
                     }
                 }
+
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {

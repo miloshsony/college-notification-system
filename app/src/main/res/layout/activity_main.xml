@@ -6,32 +6,6 @@
     android:background="#f5f5f5">
 
     <!-- Header -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="#6200EE"
-        android:padding="12dp"
-        android:gravity="center_vertical">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="College Notifications"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF" />
-
-        <Button
-            android:id="@+id/btn_logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Logout"
-            android:textSize="12sp"
-            style="@style/Widget.Material3.Button.TextButton"
-            android:textColor="#FFFFFF" />
-    </LinearLayout>
 
     <!-- Content Container -->
     <FrameLayout
@@ -39,11 +13,6 @@
         android:layout_height="match_parent">
 
         <!-- Notifications List -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/notifications_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="8dp" />
 
         <!-- Empty State -->
         <TextView
@@ -55,6 +24,18 @@
             android:textColor="#666666"
             android:textSize="16sp"
             android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="430dp"
+            android:layout_height="185dp"
+            android:text="Button" />
 
     </FrameLayout>
 

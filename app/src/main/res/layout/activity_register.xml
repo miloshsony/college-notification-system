@@ -16,10 +16,11 @@
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/logo"
             android:layout_marginTop="40dp"
             android:layout_marginBottom="24dp"
             android:contentDescription="App Logo" />
+
 
         <!-- Title -->
         <TextView
